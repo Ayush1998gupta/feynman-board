@@ -1,0 +1,17 @@
+<%-include("./partials/header")-%>
+
+    <body class="bg-teal-600 flex  flex-col justify-center items-center">
+
+        <h1
+            class="mb-8 mt-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+            Feynman Board
+        </h1>
+        <form action="/addTopic" method="post" class="w-full flex flex-col justify-center items-center ">
+
+            <%- include("./partials/_form_fields") %>
+
+            
+        </form>
+    </body>
+
+    </html>

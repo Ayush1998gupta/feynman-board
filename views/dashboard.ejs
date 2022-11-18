@@ -1,0 +1,43 @@
+<%-include("./partials/header")-%>
+
+  <body class="bg-teal-600 flex flex-col justify-center items-center">
+
+
+    <h1
+      class="mb-8 mt-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+      Feynman Board
+    </h1>
+
+    <a href="/add">
+      <button type="button"
+        class="text-white bg-[#4285F4] hover:bg-[#2873BF]/90  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-8">
+        Add Topics
+      </button>
+    </a>
+
+    <main>
+      <div
+        class="w-96 text-lg font-medium text-gray-900 bg-white rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        <a aria-current="true"
+          class="block py-6 text-xl px-6 w-full text-white bg-blue-500 rounded-t-lg border-b border-gray-200 cursor-pointer dark:bg-gray-800 dark:border-gray-600 ">
+          Topic List
+        </a>
+        <% topics.forEach(topic=> { %>
+          <a href="/<%=topic.id%>"
+            class="block py-2 px-4 w-full border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+            <%= topic.topicName %>
+              <div class="w-full mt-3 bg-gray-200 rounded-full dark:bg-gray-700">
+                <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+                  style="width: <%= topic.percentage %>% ">
+                  <%= topic.percentage %>%
+                </div>
+              </div>
+          </a>
+          <% }) %>
+
+
+      </div>
+    </main>
+  </body>
+
+  </html>
